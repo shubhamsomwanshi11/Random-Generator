@@ -1,8 +1,8 @@
 let code = '';
-var names = ["Cat", "Animal","Pokemon"]
+var names = []
 function GenerateCards() {
-    for (let i = 0; i < names.length; i++) {
-        code += `<div class="column is-3">
+  for (let i = 0; i < names.length; i++) {
+    code += `<div class="column">
         <div class="card">
           <div class="card-image">
             <figure class="image is-4by3">
@@ -20,12 +20,12 @@ function GenerateCards() {
           </div>
         </div>
       </div>`
-    }
-    document.getElementById("RandomArea").innerHTML = code;
+  }
+  document.getElementById("RandomArea").innerHTML = code;
 }
 
 function GenerateHeader() {
-    document.getElementById("head").innerHTML = `
+  document.getElementById("head").innerHTML = `
     <div class="hero">
         <div class="hero-body">
             <div class="container">
@@ -43,7 +43,7 @@ function GenerateHeader() {
         </div>
     </div>`
 }
-document.addEventListener("DOMContentLoaded", function () {
-    GenerateCards();
-    GenerateHeader();
+document.addEventListener('DOMContentLoaded', function () {
+// GenerateCards();
+// GenerateHeader();
 });

@@ -1,59 +1,352 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title>Random Generators</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="./index.js"></script>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Random Generators | CodeBeautify</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+   <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+   <style>
+      .card-image {
+         position: relative;
+         border-radius: 8px;
+      }
+
+      .overlay {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         text-align: center;
+         background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .overlay-text {
+         color: white;
+         font-family: 'Lobster', cursive;
+         font-size: 1.5rem;
+      }
+
+      /* width */
+      ::-webkit-scrollbar {
+         width: 10px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+         background: #f1f1f1;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+         background: #888;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+         background: #555;
+      }
+
+      .menu-list li a {
+         color: white;
+      }
+   </style>
 </head>
 
-<style>
-  .card {
-    height: 100%;
-  }
-
-  html,
-  body {
-    width: 100%;
-    height: 100%;
-  }
-
-  body {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-  }
-
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-
-    50% {
-      background-position: 100% 50%;
-    }
-
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  .section::-webkit-scrollbar {
-    display: none;
-  }
-</style>
-
 <body>
-  <div id="head" ></div>
-  <section class="section" style="height: 70vh; overflow-y: scroll;">
-    <div class="container">
-      <div class="columns is-multiline" id="RandomArea">
+
+   <nav class="navbar is-dark pt-3" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+         <div class="navbar-item is-hidden-desktop">
+            <img src="" alt="Logo">
+         </div>
+         <div class="navbar-item is-hidden-desktop">
+            <div class="control">
+               <input class="input is-rounded is-centered" type="seach" placeholder="Search Random Generators">
+            </div>
+         </div>
       </div>
-    </div>
-  </section>
+
+      <div class="navbar-menu">
+         <div class="navbar-start">
+         </div>
+
+         <div class="navbar-end">
+            <div class="navbar-item is-centered">
+               <div class="control">
+                  <input class="input is-rounded " type="search" placeholder="Search Random Generators">
+               </div>
+            </div>
+         </div>
+      </div>
+   </nav>
+
+   <div class="columns has-background-dark">
+      <div class="column is-2 mx-2 mt-3 is-hidden-mobile">
+         <aside class="menu has-text-white">
+            <!-- <p class="menu-label">
+                    Home
+                </p> -->
+            <ul class="menu-list">
+               <li><a class="is-flex has-align-items-center">
+                     <span class="mr-4 material-symbols-outlined">
+                        home
+                     </span>Home
+                  </a></li>
+               <li><a class="is-flex has-align-items-center"><span class="mr-4 material-symbols-outlined">
+                        history
+                     </span>
+                     Recently Used</a></li>
+               <li><a class="is-flex has-align-items-center"><span class="mr-4 material-symbols-outlined">
+                        add
+                     </span>New Generator</a></li>
+               <li><a class="is-flex has-align-items-center"><span class="mr-4 material-symbols-outlined">
+                        local_fire_department
+                     </span>Trending Now</a></li>
+               <li><a class="is-flex has-align-items-center"><span class="mr-4 material-symbols-outlined">
+                        update
+                     </span>Updated</a></li>
+               <li><a class="is-flex has-align-items-center"><span class="mr-4 material-symbols-outlined">
+                        shuffle
+                     </span>Random</a></li>
+            </ul>
+            <p class="menu-label">
+               Other Random Generators
+            </p>
+            <ul class="menu-list" style="height: 50vh; overflow-y: scroll; ">
+               <li>
+                  <a href="/random-hobby-generator" title="Random Hobby Generator">Random Hobby Generator</a>
+               </li>
+               <li><a href="/random-animal-generator" title="Random Animal Generator">Random Animal Generator</a></li>
+               <li><a href="/random-object-generator" title="Random Object Generator">Random Object Generator</a></li>
+               <li><a href="/random-nfl-team-generator" title="Random NFL Team Generator">Random NFL Team Generator</a>
+               </li>
+               <li><a href="/random-nhl-team-generator" title="Random NHL Team Generator">Random NHLTeam Generator</a>
+               </li>
+               <li><a href="/random-ipl-team-generator" title="Random IPL Team Generator">Random IPL Team Generator</a>
+               </li>
+               <li><a href="/random-ncaa-basketball-team-generator" title="Random NCAA Basketball Team">Random NCAA
+                     Basketball Team</a></li>
+               <li><a href="/random-ncaa-football-team-generator" title="Random NCAA Football Team">Random NCAA Football
+                     Team</a></li>
+               <li><a href="/random-nba-team-generator" title="Random NBA Team Generator">Random NBA Team Generator</a>
+               </li>
+               <li><a href="/random-mlb-team-generator" title="Random MLB Team Generator">Random MLB Team Generator</a>
+               </li>
+               <li><a href="/random-emoji-generator" title="Random Emoji Generator">Random Emoji Generator</a></li>
+               <li><a href="/random-phone-number" title="Random Phone Number">Random Phone Number</a></li>
+               <li><a href="/random-street-address" title="Random Street Address">Random Street Address</a></li>
+               <li><a href="/random-us-area-codes" title="Random US Area Codes">Random US Area Codes</a></li>
+               <li><a href="/random-country-generator" title="Random Country Generator">Random Country Generator</a>
+               </li>
+               <li><a href="/random-house-address" title="Random House Address">Random House Address</a></li>
+               <li><a href="/random-flag-generator" title="Random Flag Generator">Random Flag Generator</a></li>
+               <li><a href="/incorrect-quotes-generator" title="Incorrect Quotes Generator">Incorrect Quotes
+                     Generator</a></li>
+               <li><a href="/random-address-generator" title="Random Address Generator">Random Address Generator</a>
+               </li>
+               <li><a href="/random-billing-address" title="Random Billing Address">Random Billing Address</a></li>
+               <li><a href="/random-team-generator" title="Random Team Generator">Random Team Generator</a></li>
+               <li><a href="/random-zip-code" title="Random Zip Code">Random Zip Code</a></li>
+               <li><a href="/random-things-generator" title="Random Things Generator">Random Things Generator</a></li>
+               <li><a href="/random-boy-name-generator" title="Random Boy Name Generator">Random Boy Name Generator</a>
+               </li>
+               <li><a href="/random-male-name-generator" title="Random Male Name Generator">Random Male Name
+                     Generator</a></li>
+               <li><a href="/billing-postal-code-generator" title="Billing Postal Code Generator">Billing Postal Code
+                     Generator</a></li>
+               <li><a href="/random-pet-generator" title="Random Pet Generator">Random Pet Generator</a></li>
+               <li><a href="/random-ethnicity-generator" title="Random Ethnicity Generator">Random Ethnicity
+                     Generator</a></li>
+               <li><a href="/random-nationality-generator" title="Random Nationality Generator">Random Nationality
+                     Generator</a></li>
+               <li><a href="/random-things-to-draw-generator" title="Random Things to Draw Generator">Random Things to
+                     Draw Generator</a></li>
+               <li><a href="/pictionary-word-generator" title="Pictionary Word Generator">Pictionary Word Generator</a>
+               </li>
+               <li><a href="/random-topic-generator" title="Random Topic Generator">Random Topic Generator</a></li>
+               <li><a href="/warrior-cat-name-generator" title="Warrior Cat Name Generator">Warrior Cat Name
+                     Generator</a></li>
+               <li><a href="/xbox-name-generator" title="XBOX Name Generator">XBOX Name Generator</a></li>
+               <li><a href="/elf-name-generator" title="Elf Name Generator">Elf Name Generator</a></li>
+               <li><a href="/xbox-gamertag-generator" title="XBOX GamerTag Generator">XBOX GamerTag Generator</a></li>
+               <li><a href="/random-scene-generator" title="Random Scene Generator">Random Scene Generator</a></li>
+               <li><a href="/random-environment-generator" title="Random Environment Generator">Random Environment
+                     Generator</a></li>
+               <li><a href="/random-aesthetic-generator" title="Random Aesthetic Generator">Random Aesthetic
+                     Generator</a></li>
+               <li><a href="/random-pokemon-type-generator" title="Random Pokemon Type Generator">Random Pokemon Type
+                     Generator</a></li>
+               <li><a href="/random-theme-generator" title="Random Theme Generator">Random Theme Generator</a></li>
+               <li><a href="/random-minecraft-block-generator" title="Random Minecraft Block Generator">Random Minecraft
+                     Block Generator</a></li>
+               <li><a href="/otp-prompt-generator" title="OTP Prompt Generator">OTP Prompt Generator</a></li>
+               <li><a href="/jojo-stand-generator" title="JoJo Stand Generator">JoJo Stand Generator</a></li>
+               <li><a href="/cookie-run-character-generator" title="Cookie Run Character Generator">Cookie Run Character
+                     Generator</a></li>
+               <li><a href="/valorant-crosshair-generator" title="Valorant Crosshair Generator">Valorant Crosshair
+                     Generator</a></li>
+               <li><a href="/moodboard-generator" title="Moodboard Generator">Moodboard Generator</a></li>
+               <li><a href="/aesthetic-username-generator" title="Aesthetic Username Generator">Aesthetic Username
+                     Generator</a></li>
+               <li><a href="/random-state-generator" title="Random State Generator">Random State Generator</a></li>
+               <li><a href="/random-girl-name-generator" title="Random Girl Name Generator">Random Girl Name
+                     Generator</a></li>
+               <li><a href="/personality-generator" title="Personality Generator">Personality Generator</a></li>
+               <li><a href="/random-city-generator" title="Random City Generator">Random City Generator</a></li>
+               <li><a href="/goofy-ahh-names-generator" title="Goofy Ahh Names Generator">Goofy Ahh Names Generator</a>
+               </li>
+               <li><a href="/random-adjective-generator" title="Random Adjective Generator">Random Adjective
+                     Generator</a></li>
+               <li><a href="/reddit-username-generator" title="Reddit Username Generator">Reddit Username Generator</a>
+               </li>
+               <li><a href="/random-charades-generator" title="Random Charades Generator">Random Charades Generator</a>
+               </li>
+               <li><a href="/fortune-cookie-generator" title="Fortune Cookie Generator">Fortune Cookie Generator</a>
+               </li>
+               <li><a href="/lord-of-the-rings-name-generator" title="Lord Of The Rings Name Generator">Lord Of The
+                     Rings Name Generator</a></li>
+               <li><a href="/random-car-generator" title="Random Car Generator">Random Car Generator</a></li>
+               <li><a href="/random-dog-breed-generator" title="Random Dog Breed Generator">Random Dog Breed
+                     Generator</a></li>
+               <li><a href="/random-tarot-card-generator" title="Random Tarot Card Generator">Random Tarot Card
+                     Generator</a></li>
+               <li><a href="/random-birthday-generator" title="Random Birthday Generator">Random Birthday Generator</a>
+               </li>
+               <li><a href="/random-4-digit-number-generator" title="Random 4 Digit Number Generator">Random 4 Digit
+                     Number Generator</a></li>
+               <li><a href="/random-6-digit-number-generator" title="Random 6 Digit Number Generator">Random 6 Digit
+                     Number Generator</a></li>
+               <li><a href="/random-cartoon-character-generator" title="Random Cartoon Character Generator">Random
+                     Cartoon Character Generator</a></li>
+               <li><a href="/random-year-generator" title="Random Year Generator">Random Year Generator</a></li>
+               <li><a href="/random-emotion-generator" title="Random Emotion Generator">Random Emotion Generator</a>
+               </li>
+               <li><a href="/sims-3-trait-generator" title="Sims 3 Trait Generator">Sims 3 Trait Generator</a></li>
+               <li><a href="/fursona-generator" title="Fursona Generator">Fursona Generator</a></li>
+               <li><a href="/random-dinosaur-generator" title="Random Dinosaur Generator">Random Dinosaur Generator</a>
+               </li>
+               <li><a href="/random-anime-character-generator" title="Random Anime Character Generator">Random Anime
+                     Character Generator</a></li>
+               <li><a href="/random-superpower-generator" title="Random Superpower Generator">Random Superpower
+                     Generator</a></li>
+               <li><a href="/aesthetic-emoji-generator" title="Aesthetic Emoji Generator">Aesthetic Emoji Generator</a>
+               </li>
+               <li><a href="/random-body-part-generator" title="Random Body Part Generator">Random Body Part
+                     Generator</a></li>
+               <li><a href="/random-league-champion" title="Random League Champion">Random League Champion</a></li>
+               <li><a href="/monster-generator" title="Monster Generator">Monster Generator</a></li>
+               <li><a href="/random-job-generator" title="Random Job Generator">Random Job Generator</a></li>
+               <li><a href="/random-book-generator" title="Random Book Generator">Random Book Generator</a></li>
+               <li><a href="/random-bird-generator" title="Random Bird Generator">Random Bird Generator</a></li>
+               <li><a href="/random-college-generator" title="Random College Generator">Random College Generator</a>
+               </li>
+               <li><a href="/random-cat-generator" title="Random Cat Generator">Random Cat Generator</a></li>
+               <li><a href="/random-last-name-generator" title="Random Last Name Generator">Random Last Name
+                     Generator</a></li>
+               <li><a href="/random-holiday-generator" title="Random Holiday Generator">Random Holiday Generator</a>
+               </li>
+               <li><a href="/random-planet-generator" title="Random Planet Generator">Random Planet Generator</a></li>
+               <li><a href="/random-element-generator" title="Random Element Generator">Random Element Generator</a>
+               </li>
+               <li><a href="/random-sentence-generator" title="Random Sentence Generator"> Sentence Generator</a></li>
+               <li><a href="/random-quote-generator" title="Random Quote Generator">Random Quote Generator</a></li>
+               <li><a href="/random-flower-generator" title="Random Flower Generator">Random Flower Generator</a></li>
+               <li><a href="/character-trait-generator" title="Character Trait Generator">Character Trait Generator</a>
+               </li>
+               <li><a href="/random-movie-generator" title="Random Movie Generator">Random Movie Generator</a></li>
+               <li><a href="/random-address-in-california" title="Random Address in California">Random Address in
+                     California</a></li>
+               <li><a href="/random-pokemon-generator" title="Random Pokemon Generator">Random Pokemon Generator</a>
+               </li>
+               <li><a href="/canada-address" title="Random Canada Address Generator">Random Canada Address Generator</a>
+               </li>
+               <li><a href="/random-pokemon-team-generator" title="Random Pokemon Team Generator">Random Pokemon Team
+                     Generator</a></li>
+               <li><a href="/superhero-generator" title="Random Superhero Generator">Random Superhero Generator</a></li>
+               <li><a href="/random-celebrity-generator" title="Random Celebrity Generator">Random Celebrity
+                     Generator</a></li>
+               <li><a href="/random-song-lyrics" title="Random Song Lyrics Generator">Random Song Lyrics</a></li>
+               <li><a href="/random-caption-generator" title="Random Caption Generator">Random Caption Generator</a>
+               </li>
+               <li><a href="/random-actor-generator" title="Random Actor Generator">Random Actor Generator</a></li>
+               <li><a href="/random-address-in-spain" title="Random Address in Spain">Address in Spain</a></li>
+               <li><a href="/random-video-game-generator" title="Random Video Game Generator">Random Video Game</a></li>
+               <li><a href="/random-paragraph-generator" title="Random Paragraph Generator">Random Paragraph
+                     Generator</a></li>
+               <li><a href="/random-new-zealand-address" title="Random  New Zealand Address">Random New Zealand
+                     Address</a></li>
+            </ul>
+         </aside>
+      </div>
+      <div class="column">
+         <section class="section">
+            <div class="container">
+               <div class="columns is-multiline">
+                  <div class="column">
+                     <div class="card">
+                        <div class="card-image">
+                           <figure class="image is-3by2">
+                              <img src="https://picsum.photos/800/600/?random" alt="Random Image">
+                           </figure>
+                           <div class="overlay">
+                              <div class="title has-text-light overlay-text">Random Image Generator</div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="column">
+                     <div class="card">
+                        <div class="card-image">
+                           <figure class="image is-3by2">
+                              <img src="https://picsum.photos/800/600/?random" alt="Random Image">
+                           </figure>
+                           <div class="overlay">
+                              <div class="title has-text-light overlay-text">Random Image Generator</div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="column">
+                     <div class="card">
+                        <div class="card-image">
+                           <figure class="image is-3by2">
+                              <img src="https://picsum.photos/800/600/?random" alt="Random Image">
+                           </figure>
+                           <div class="overlay">
+                              <div class="title has-text-light overlay-text">Random Number Generator</div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="column">
+                     <div class="card">
+                        <div class="card-image">
+                           <figure class="image is-3by2">
+                              <img src="https://picsum.photos/800/600/?random" alt="Random Image">
+                           </figure>
+                           <div class="overlay">
+                              <div class="title has-text-light overlay-text">Random Name Generator</div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </div>
+   </div>
 </body>
 
 </html>
