@@ -81,7 +81,7 @@ body {
   border-left: 5px solid #A48EFF;
 }
 
-.input {
+.inputs {
   border-radius: 30px;
   fill: rgb(170, 173, 190);
   height: 40px;
@@ -95,7 +95,7 @@ body {
   outline: 0;
 }
 
-svg {
+.svgs {
   border: 1px solid #878A9E;
   border-radius: 30px;
   font-family: Nunito;
